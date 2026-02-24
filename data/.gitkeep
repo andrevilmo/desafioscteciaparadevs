@@ -1,0 +1,2 @@
+# Este diretório armazena backups do MongoDB
+# Os backups são criados automaticamente e não devem ser commitados
