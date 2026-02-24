@@ -55,4 +55,35 @@ describe('EmpreendimentoCard', () => {
     expect(screen.getByText('Editar')).toBeInTheDocument();
     expect(screen.getByText('Excluir')).toBeInTheDocument();
   });
+
+  it('displays inactive status badge correctly', () => {
+    const inactiveEmpreendimento = {
+      ...mockEmpreendimento,
+      status: Status.INATIVO,
+    };
+
+    renderWithProviders(<EmpreendimentoCard empreendimento={inactiveEmpreendimento} />);
+
+    const statusBadge = screen.getByText('inativo');
+    expect(statusBadge).toBeInTheDocument();
+    expect(statusBadge).toHaveClass('status-badge', 'inativo');
+  });
+
+  it('displays all segmentos correctly', () => {
+    const segmentos = Object.values(SegmentoAtuacao);
+
+    segmentos.forEach((segmento) => {
+      const empreendimento = {
+        ...mockEmpreendimento,
+        segmento,
+      };
+
+      const { unmount } = renderWithProviders(
+        <EmpreendimentoCard empreendimento={empreendimento} />
+      );
+
+      expect(screen.getByText(segmento)).toBeInTheDocument();
+      unmount();
+    });
+  });
 });
