@@ -13,10 +13,22 @@
   pointer-events: auto;
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .toast-container {
     right: 10px;
     left: 10px;
     top: 10px;
+    gap: 0.625rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .toast-container {
+    right: 8px;
+    left: 8px;
+    top: 8px;
+    gap: 0.5rem;
   }
 }

@@ -202,3 +202,121 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+/* Tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .empreendimento-card {
+    padding: 1.25rem;
+  }
+
+  .card-title {
+    font-size: 1.125rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .empreendimento-card {
+    padding: 1.25rem;
+    border-radius: 10px;
+    margin-bottom: 0.875rem;
+  }
+
+  .card-header {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.875rem;
+  }
+
+  .card-title {
+    font-size: 1.125rem;
+    flex: 1;
+    min-width: 0;
+    word-break: break-word;
+  }
+
+  .status-badge {
+    padding: 0.3125rem 0.75rem;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .card-body {
+    margin-bottom: 0.875rem;
+  }
+
+  .card-field {
+    margin-bottom: 0.875rem;
+    gap: 0.625rem;
+  }
+
+  .field-icon {
+    font-size: 1.125rem;
+    flex-shrink: 0;
+  }
+
+  .card-field strong {
+    font-size: 0.8125rem;
+  }
+
+  .card-field span:not(.field-icon):not(.segmento-badge) {
+    font-size: 0.875rem;
+  }
+
+  .segmento-badge {
+    font-size: 0.8125rem;
+    padding: 0.1875rem 0.625rem;
+  }
+
+  .card-actions {
+    flex-direction: column;
+    gap: 0.625rem;
+    padding-top: 0.875rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .empreendimento-card {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .status-badge {
+    padding: 0.25rem 0.625rem;
+    font-size: 0.6875rem;
+  }
+
+  .card-field {
+    margin-bottom: 0.75rem;
+  }
+
+  .field-icon {
+    font-size: 1rem;
+  }
+
+  .card-field strong {
+    font-size: 0.75rem;
+  }
+
+  .card-field span:not(.field-icon):not(.segmento-badge) {
+    font-size: 0.8125rem;
+  }
+
+  .btn {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+}

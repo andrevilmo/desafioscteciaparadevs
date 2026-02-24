@@ -41,3 +41,27 @@
   color: #6b7280;
   font-size: 1rem;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .loading-spinner-container {
+    padding: 1.5rem;
+  }
+
+  .loading-message {
+    font-size: 0.9375rem;
+    margin-top: 0.875rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .loading-spinner-container {
+    padding: 1rem;
+  }
+
+  .loading-message {
+    font-size: 0.875rem;
+    margin-top: 0.75rem;
+  }
+}
