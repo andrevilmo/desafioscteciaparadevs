@@ -4,6 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { empreendimentoService } from '../services/api';
 import { CreateEmpreendimentoDto, SegmentoAtuacao, Status } from '../types/empreendimento';
+import { useToastContext } from '../context/ToastContext';
+import { LoadingSpinner } from '../components/LoadingSpinner';
 import './EmpreendimentoForm.css';
 
 export const EmpreendimentoForm = () => {
@@ -42,12 +44,18 @@ export const EmpreendimentoForm = () => {
     }
   }, [empreendimento, reset]);
 
+  const toast = useToastContext();
+
   const createMutation = useMutation(
     (data: CreateEmpreendimentoDto) => empreendimentoService.create(data),
     {
       onSuccess: () => {
         queryClient.invalidateQueries('empreendimentos');
+        toast.success('Empreendimento cadastrado com sucesso!');
         navigate('/');
+      },
+      onError: () => {
+        toast.error('Erro ao cadastrar empreendimento. Tente novamente.');
       },
     }
   );
@@ -57,7 +65,11 @@ export const EmpreendimentoForm = () => {
     {
       onSuccess: () => {
         queryClient.invalidateQueries('empreendimentos');
+        toast.success('Empreendimento atualizado com sucesso!');
         navigate('/');
+      },
+      onError: () => {
+        toast.error('Erro ao atualizar empreendimento. Tente novamente.');
       },
     }
   );
@@ -73,8 +85,7 @@ export const EmpreendimentoForm = () => {
   if (isLoading) {
     return (
       <div className="loading-container">
-        <div className="spinner"></div>
-        <p>Carregando...</p>
+        <LoadingSpinner size="large" message="Carregando dados do empreendimento..." />
       </div>
     );
   }

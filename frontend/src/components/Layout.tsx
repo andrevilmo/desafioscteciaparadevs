@@ -16,10 +16,10 @@ export const Layout = ({ children }: LayoutProps) => {
           </h1>
           <nav className="header-nav">
             <Link to="/" className="nav-link">
-              Lista de Empreendimentos
+              📋 Lista de Empreendimentos
             </Link>
             <Link to="/novo" className="nav-link button-primary">
-              Novo Empreendimento
+              ➕ Novo Empreendimento
             </Link>
           </nav>
         </div>

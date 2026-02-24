@@ -7,8 +7,12 @@
 .header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem 0;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
 }
 
 .header-content {
@@ -61,7 +65,8 @@
 
 .main-content {
   flex: 1;
-  padding: 2rem 0;
+  padding: 2.5rem 0;
+  min-height: calc(100vh - 80px);
 }
 
 .app-container {
