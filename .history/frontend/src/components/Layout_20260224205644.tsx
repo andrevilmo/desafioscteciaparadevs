@@ -12,7 +12,7 @@ export const Layout = ({ children }: LayoutProps) => {
       <header className="header">
         <div className="header-content">
           <h1 className="header-title">
-            <Link to="/">Desafio SCTEC IA para Devs</Link>
+            <Link to="/">Desafio SC Tecia para Devs</Link>
           </h1>
           <nav className="header-nav">
             <Link to="/" className="nav-link">
